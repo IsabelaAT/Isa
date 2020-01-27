@@ -1,25 +1,29 @@
 ﻿using System;
 
-namespace tarea2
+namespace tarea_2_clase_2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("inserte un ángulo menor a 90");
-            double a = double.Parse(Console.ReadLine());
-            double b = a * (Math.PI / 180.0);
+            //ingreso de datos
+            Console.WriteLine("ingrese d, b, y");
+            double dgrados = double.Parse(Console.ReadLine());
+            double bgrados = double.Parse(Console.ReadLine());
+            double y = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("inserte hipotenusa");
-            double t = double.Parse(Console.ReadLine());
+            //consersión a radianes 
+            double d = dgrados * (Math.PI / 180);
+            double b = bgrados * (Math.PI / 180);
 
-            double c = (90 - b);
-            Console.WriteLine("el ángulo c es igual a:" + c);
-        
-            double z = (t * Math.Sin c);
-            Console.WriteLine("el lado z es igual a:" + z);
-            double y = ( t * Math.Cos c);
-            Console.WriteLine("el lado y es igual a:");
+            //cálculo de los valores
+            double e = Math.PI - d - b;
+            double c = Math.PI - e;
+            double a = Math.PI - (Math.PI / 2) - c;
+            double z = Math.Tan(c) * a;
+
+            //resultado
+            Console.WriteLine("el valor de z es igual a:"+ z);
 
 
 
